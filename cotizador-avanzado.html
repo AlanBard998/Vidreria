@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<title>Cotizador Avanzado - Vidriería Lagos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/main.js"></script>
+<!-- Tailwind Config con los colores de tu proyecto -->
+<script>
+    tailwind.config = {
+    theme: {
+        extend: {
+        colors: {
+            "primary": "#000917",
+            "primary-container": "#0d2137",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#7689a4",
+            "secondary": "#006398",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#5bb8fe",
+            "surface": "#f8f9ff",
+            "on-surface": "#0b1c30",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "surface-container": "#e5eeff",
+            "surface-container-high": "#dce9ff",
+            "on-surface-variant": "#44474d",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6"
+        },
+        fontFamily: {
+            "body": ["Inter", "sans-serif"],
+            "title": ["Plus Jakarta Sans", "sans-serif"]
+        }
+        }
+    }
+    }
+</script>
+</head>
+
+<body class="bg-surface font-body text-on-surface antialiased p-4 md:p-10">
+
+<div class="max-w-5xl mx-auto bg-surface-container-lowest rounded-2xl shadow-xl overflow-hidden border border-surface-container">
+    
+    <!-- Header del Cotizador -->
+    <div class="bg-primary text-on-primary p-8 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div>
+        <h1 class="font-title text-3xl font-bold">Planilla de Obra Mayor</h1>
+        <p class="text-on-primary-container mt-1">Detalle las unidades para su proyecto residencial o comercial.</p>
+    </div>
+    <a href="index.html" class="flex items-center gap-2 bg-primary-container hover:bg-surface-container-high hover:text-primary text-on-primary px-4 py-2 rounded-lg font-semibold transition-all">
+        <span class="material-symbols-outlined">arrow_back</span> Volver al inicio
+    </a>
+    </div>
+
+    <form id="form-cotizador-avanzado" class="p-8">
+    
+    <!-- Paso 1: Lista Dinámica de Ventanas -->
+    <div class="mb-10">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+        <h2 class="font-title text-2xl font-bold text-primary">1. Detalle de Unidades</h2>
+        <button type="button" id="btn-agregar-ventana" class="mt-2 md:mt-0 px-4 py-2 bg-secondary text-on-secondary hover:bg-secondary-container hover:text-primary rounded-xl font-bold flex items-center gap-2 transition-all shadow-md">
+            <span class="material-symbols-outlined">add_circle</span> Agregar Paño / Ventana
+        </button>
+        </div>
+
+        <div class="bg-surface p-4 rounded-xl border border-surface-container-high">
+        <!-- Contenedor de Filas -->
+        <div id="lista-ventanas" class="flex flex-col gap-4">
+            
+            <!-- Fila Inicial (No se puede borrar) -->
+            <div class="ventana-item grid grid-cols-1 md:grid-cols-12 gap-4 bg-surface-container-lowest p-4 rounded-lg shadow-sm border border-surface-container items-end">
+            <div class="md:col-span-3">
+                <label class="block text-sm font-bold text-primary mb-1">Ubicación / Recinto</label>
+                <input type="text" name="ubicacion[]" placeholder="Ej: Dormitorio Ppal" class="w-full h-10 px-3 bg-surface rounded focus:ring-2 focus:ring-secondary outline-none border border-surface-container-high" required>
+            </div>
+            <div class="md:col-span-2">
+                <label class="block text-sm font-bold text-primary mb-1">Ancho (cm)</label>
+                <input type="number" name="ancho[]" placeholder="Ej: 150" class="w-full h-10 px-3 bg-surface rounded focus:ring-2 focus:ring-secondary outline-none border border-surface-container-high" required>
+            </div>
+            <div class="md:col-span-2">
+                <label class="block text-sm font-bold text-primary mb-1">Alto (cm)</label>
+                <input type="number" name="alto[]" placeholder="Ej: 200" class="w-full h-10 px-3 bg-surface rounded focus:ring-2 focus:ring-secondary outline-none border border-surface-container-high" required>
+            </div>
+            <div class="md:col-span-2">
+                <label class="block text-sm font-bold text-primary mb-1">Apertura</label>
+                <select name="apertura[]" class="w-full h-10 px-3 bg-surface rounded focus:ring-2 focus:ring-secondary outline-none border border-surface-container-high">
+                <option value="corredera">Corredera</option>
+                <option value="oscilobatiente">Oscilobatiente</option>
+                <option value="proyectante">Proyectante</option>
+                <option value="fijo">Paño Fijo</option>
+                </select>
+            </div>
+            <div class="md:col-span-2">
+                <label class="block text-sm font-bold text-primary mb-1">Línea</label>
+                <select name="material[]" class="w-full h-10 px-3 bg-surface rounded focus:ring-2 focus:ring-secondary outline-none border border-surface-container-high">
+                <option value="pvc_blanco">PVC Blanco</option>
+                <option value="pvc_madera">PVC Foliado Madera</option>
+                <option value="pvc_antracita">PVC Antracita</option>
+                <option value="aluminio_qt">Aluminio Línea QT</option>
+                </select>
+            </div>
+            <div class="md:col-span-1 flex justify-end">
+                <button type="button" class="btn-eliminar w-10 h-10 flex items-center justify-center bg-error-container text-error hover:bg-error hover:text-on-error rounded transition-colors" title="Eliminar fila">
+                <span class="material-symbols-outlined pointer-events-none">delete</span>
+                </button>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+    <!-- Paso 2: Datos de Contacto -->
+    <div>
+        <h2 class="font-title text-2xl font-bold text-primary mb-4">2. Datos para envío de propuesta</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-surface-container-low p-6 rounded-xl border border-surface-container">
+        <div>
+            <label class="block text-sm font-bold text-primary mb-1">Nombre del Cliente / Constructora *</label>
+            <input type="text" name="cliente_nombre" class="w-full h-11 px-4 bg-surface-container-lowest rounded-lg focus:ring-2 focus:ring-secondary outline-none" required>
+        </div>
+        <div>
+            <label class="block text-sm font-bold text-primary mb-1">Teléfono / WhatsApp *</label>
+            <input type="tel" name="cliente_telefono" class="w-full h-11 px-4 bg-surface-container-lowest rounded-lg focus:ring-2 focus:ring-secondary outline-none" required>
+        </div>
+        <div>
+            <label class="block text-sm font-bold text-primary mb-1">Correo Electrónico *</label>
+            <input type="email" name="cliente_email" class="w-full h-11 px-4 bg-surface-container-lowest rounded-lg focus:ring-2 focus:ring-secondary outline-none" required>
+        </div>
+        <div>
+        <label class="block text-sm font-bold text-primary mb-1">Comuna de Instalación *</label>
+        <input type="text" name="cliente_ubicacion" class="w-full h-11 px-4 bg-surface-container-lowest rounded-lg focus:ring-2 focus:ring-secondary outline-none" required>
+        </div>
+        </div>
+    </div>
+
+    <!-- Botón Enviar -->
+    <div class="mt-8 pt-8 border-t border-surface-container flex justify-end">
+        <button type="submit" class="bg-primary hover:bg-primary-container text-on-primary font-title text-lg px-8 py-4 rounded-xl font-bold flex items-center gap-2 shadow-xl transition-all">
+        <span class="material-symbols-outlined">send</span> Solicitar Evaluación Técnica
+        </button>
+    </div>
+
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const btnAgregar = document.getElementById('btn-agregar-ventana');
+    const listaVentanas = document.getElementById('lista-ventanas');
+
+      // Clona la primera fila como plantilla
+    const filaPlantilla = listaVentanas.firstElementChild.cloneNode(true);
+      // Limpia los inputs de la plantilla
+    filaPlantilla.querySelectorAll('input').forEach(input => input.value = '');
+
+      // Agregar fila
+btnAgregar.addEventListener('click', () => {
+        const nuevaFila = filaPlantilla.cloneNode(true);
+        listaVentanas.appendChild(nuevaFila);
+    });
+
+      // Eliminar fila (Delegación de eventos)
+    listaVentanas.addEventListener('click', (e) => {
+        const btnEliminar = e.target.closest('.btn-eliminar');
+        if (btnEliminar) {
+        if (listaVentanas.children.length > 1) {
+            btnEliminar.closest('.ventana-item').remove();
+        } else {
+            alert('Debe incluir al menos un paño para cotizar.');
+        }
+        }
+    });
+
+      // Manejo del formulario real con fetch
+document.getElementById('form-cotizador-avanzado').addEventListener('submit', async (e) => {
+e.preventDefault();
+
+const form = e.target;
+const formData = new FormData(form);
+const btnSubmit = form.querySelector('button[type="submit"]');
+const originalText = btnSubmit.innerHTML;
+
+  // Feedback visual de carga
+btnSubmit.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Procesando...';
+btnSubmit.disabled = true;
+
+try {
+    const response = await fetch('procesadores/guardar_obra.php', {
+    method: 'POST',
+    body: formData
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      // Éxito: Limpiamos y avisamos
+    alert('¡Proyecto recibido con éxito! Nuestro equipo técnico evaluará su lista de unidades y le contactará a la brevedad.');
+      window.location.href = 'index.html'; // Redirige al inicio tras el éxito
+    } else {
+    alert('Error: ' + result.message);
+    btnSubmit.innerHTML = originalText;
+    btnSubmit.disabled = false;
+    }
+} catch (error) {
+    console.error('Error:', error);
+    alert('Hubo un problema de conexión. Intente nuevamente.');
+    btnSubmit.innerHTML = originalText;
+    btnSubmit.disabled = false;
+}
+});
+        // Aquí conectaremos con un futuro 'procesadores/guardar_obra.php'
+        alert('¡Excelente!');
+        redirect()
+    });
+</script>
+
+</body>
+</html>
