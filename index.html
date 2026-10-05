@@ -22,115 +22,8 @@
     ::-webkit-scrollbar { display: none; }
   </style>
   
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "on-primary": "#ffffff",
-            "on-secondary-fixed": "#001d31",
-            "inverse-primary": "#b5c8e5",
-            "primary-container": "#0d2137",
-            "on-surface": "#0b1c30",
-            "surface-container-high": "#dce9ff",
-            "on-surface-variant": "#44474d",
-            "primary": "#000917",
-            "primary-fixed": "#d2e4ff",
-            "on-background": "#0b1c30",
-            "on-error-container": "#93000a",
-            "surface-dim": "#cbdbf5",
-            "tertiary-fixed": "#d3e5f1",
-            "outline": "#74777d",
-            "on-secondary-fixed-variant": "#004b73",
-            "tertiary-container": "#11222b",
-            "on-error": "#ffffff",
-            "secondary-fixed": "#cce5ff",
-            "on-primary-container": "#7689a4",
-            "on-secondary": "#ffffff",
-            "on-primary-fixed": "#081c32",
-            "surface-container-low": "#eff4ff",
-            "secondary": "#006398",
-            "on-tertiary-fixed-variant": "#384953",
-            "tertiary-fixed-dim": "#b7c9d5",
-            "background": "#f8f9ff",
-            "surface": "#f8f9ff",
-            "on-tertiary-container": "#798a95",
-            "on-secondary-container": "#00476e",
-            "outline-variant": "#c4c6cd",
-            "surface-bright": "#f8f9ff",
-            "inverse-on-surface": "#eaf1ff",
-            "surface-container": "#e5eeff",
-            "inverse-surface": "#213145",
-            "error-container": "#ffdad6",
-            "on-tertiary-fixed": "#0c1e26",
-            "primary-fixed-dim": "#b5c8e5",
-            "error": "#ba1a1a",
-            "on-primary-fixed-variant": "#364860",
-            "secondary-container": "#5bb8fe",
-            "secondary-fixed-dim": "#93ccff",
-            "tertiary": "#000910",
-            "surface-variant": "#d3e4fe",
-            "on-tertiary": "#ffffff",
-            "surface-tint": "#4d6079",
-            "surface-container-lowest": "#ffffff",
-            "surface-container-highest": "#d3e4fe"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.125rem",
-            "lg": "0.25rem",
-            "xl": "0.5rem",
-            "full": "0.75rem"
-          },
-          "spacing": {
-            "space-sm": "0.75rem",
-            "space-2xs": "0.25rem",
-            "space-3xl": "4.5rem",
-            "container-max": "80rem",
-            "space-4xl": "6rem",
-            "space-2xl": "3rem",
-            "space-lg": "1.5rem",
-            "gutter-desktop": "2rem",
-            "space-md": "1rem",
-            "gutter-mobile": "1rem",
-            "space-xs": "0.5rem",
-            "space-xl": "2rem"
-          },
-          "fontFamily": {
-            "label-md": ["Inter"],
-            "label-sm": ["Inter"],
-            "display-hero-mobile": ["Plus Jakarta Sans"],
-            "body-md": ["Inter"],
-            "headline-lg-mobile": ["Plus Jakarta Sans"],
-            "body-lg": ["Inter"],
-            "headline-md": ["Plus Jakarta Sans"],
-            "title-md": ["Plus Jakarta Sans"],
-            "display-hero": ["Plus Jakarta Sans"],
-            "headline-lg": ["Plus Jakarta Sans"],
-            "headline-sm": ["Plus Jakarta Sans"],
-            "eyebrow": ["Plus Jakarta Sans"],
-            "body-sm": ["Inter"]
-          },
-          "fontSize": {
-            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
-            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
-            "display-hero-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
-            "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
-            "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
-            "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-            "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-            "display-hero": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
-            "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
-            "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
-            "eyebrow": ["11px", {"lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "700"}],
-            "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}]
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Hoja de estilos de Tailwind compilada localmente -->
+  <link href="css/style.css" rel="stylesheet" />
 </head>
 
 <body class="bg-background font-body-md text-body-md text-on-surface antialiased">
@@ -142,9 +35,10 @@
           <span class="font-medium tracking-tight truncate">Taller propio en Temuco • Cobertura en todo el Sur de Chile (Temuco, Pucón, Villarrica, Caburgua, Puerto Octay y Puerto Montt) • Más de 65 años de trayectoria</span>
         </div>
         <div class="hidden md:flex items-center gap-space-lg shrink-0">
-          <a class="flex items-center gap-space-2xs text-secondary-fixed hover:text-on-primary transition-colors" href="tel:+56912345678">
+          <!-- Número estandarizado -->
+          <a class="flex items-center gap-space-2xs text-secondary-fixed hover:text-on-primary transition-colors" href="tel:+56989807490">
             <span class="material-symbols-outlined text-[16px]">phone_in_talk</span>
-            <span class="font-label-sm text-label-sm">(+56 9) 1234 5678</span>
+            <span class="font-label-sm text-label-sm">(+56 9) 8980 7490</span>
           </a>
           <span class="inline-flex items-center gap-space-2xs text-surface-container-high font-label-sm text-label-sm">
             <span class="material-symbols-outlined text-[15px]">schedule</span>Lunes a Viernes 08:30 - 18:30 hrs
@@ -217,7 +111,8 @@
                   <span class="material-symbols-outlined text-[20px]">calculate</span>
                   <span class="">Cotizar Mi Proyecto al Instante</span>
                 </a>
-                <a class="inline-flex items-center justify-center gap-space-sm bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md px-space-lg py-4 rounded-xl transition-all duration-200" href="https://wa.me/56912345678" target="_blank">
+                <!-- Enlace de WhatsApp actualizado -->
+                <a class="inline-flex items-center justify-center gap-space-sm bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md px-space-lg py-4 rounded-xl transition-all duration-200" href="https://wa.me/56989807490" target="_blank">
                   <span class="material-symbols-outlined text-[20px] text-secondary">chat</span>
                   <span class="">Hablar con un Especialista</span>
                 </a>
@@ -421,7 +316,7 @@
                         <select name="ventana_material" class="col-span-2 w-full h-10 px-3 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary text-sm outline-none">
                           <option value="">Línea y Material...</option>
                           <option value="pvc_blanco">PVC Europeo Blanco</option>
-                          <option value="pvc_foliado">PVC Foliado (Madera/Gris)</option>
+                          <option value="pvc_foliado">PVC Folio (Madera/Gris)</option>
                           <option value="pvc_americano">PVC Americano</option>
                           <option value="alum_qt">Aluminio Línea QT</option>
                         </select>
@@ -552,7 +447,8 @@
               <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mt-space-xs">
                 Nuestro equipo técnico de Vidriería Lagos Temuco revisará sus datos y le remitirá una propuesta valorizada a su correo y WhatsApp antes de 24 horas.
               </p>
-              <a class="mt-space-lg inline-flex items-center gap-space-xs bg-primary-container text-on-primary px-space-lg py-3 rounded-xl font-label-md text-label-md hover:bg-secondary transition-all" href="https://wa.me/56912345678" target="_blank">
+              <!-- Enlace de WhatsApp actualizado -->
+              <a class="mt-space-lg inline-flex items-center gap-space-xs bg-primary-container text-on-primary px-space-lg py-3 rounded-xl font-label-md text-label-md hover:bg-secondary transition-all" href="https://wa.me/56989807490" target="_blank">
                 <span class="material-symbols-outlined text-[18px]">chat</span>
                 <span class="">Acelerar atención por WhatsApp</span>
               </a>
@@ -1006,7 +902,8 @@
             <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary-container text-[18px] shrink-0">mail</span><span class="">contacto@vidrierialagos.cl</span></div>
           </div>
           <div class="pt-space-xs">
-            <a class="inline-flex items-center justify-center gap-space-xs w-full bg-secondary text-on-secondary hover:bg-secondary-container hover:text-on-secondary-fixed font-label-md text-label-md py-2.5 px-space-md rounded-xl transition-all shadow-[0_4px_16px_rgba(0,99,152,0.25)]" href="https://wa.me/56912345678" target="_blank">
+            <!-- Enlace de WhatsApp actualizado -->
+            <a class="inline-flex items-center justify-center gap-space-xs w-full bg-secondary text-on-secondary hover:bg-secondary-container hover:text-on-secondary-fixed font-label-md text-label-md py-2.5 px-space-md rounded-xl transition-all shadow-[0_4px_16px_rgba(0,99,152,0.25)]" href="https://wa.me/56989807490" target="_blank">
               <span class="material-symbols-outlined text-[20px]">chat</span>
               <span class="">WhatsApp Directo Asesoría</span>
             </a>
