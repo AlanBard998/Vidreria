@@ -75,6 +75,8 @@ require __DIR__ . '/includes/layout_top.php';
         <td class="px-4 py-3 font-medium text-[#0D2137]"><?= htmlspecialchars($row['CLIENTE_NOMBRE']) ?></td>
         <td class="px-4 py-3 text-[#64748B]"><?= htmlspecialchars($row['CLIENTE_TELEFONO']) ?><br><?= htmlspecialchars($row['CLIENTE_EMAIL']) ?></td>
         <td class="px-4 py-3 text-[#64748B]"><?= htmlspecialchars($row['CLIENTE_UBICACION']) ?></td>
+        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
+      
         <td class="px-4 py-3">
           <form method="post" class="flex items-center gap-2">
             <input type="hidden" name="id" value="<?= (int)$row['Id'] ?>">

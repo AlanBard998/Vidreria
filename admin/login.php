@@ -1,5 +1,4 @@
 <?php
-
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -11,35 +10,48 @@ if (!empty($_SESSION['admin_id'])) {
     exit;
 }
 
+// Generar token para la página de login
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
 $error = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $usuario = trim($_POST['usuario'] ?? '');
-    $password = $_POST['password'] ?? '';
-
-    if ($usuario === '' || $password === '') {
-        $error = 'Debe ingresar usuario y contraseña.';
+    // Validar el token antes de procesar credenciales
+    if (empty($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+        $error = 'Token de seguridad inválido. Recargue la página e intente nuevamente.';
     } else {
-        $stmt = $conexion->prepare('SELECT Id, PASSWORD_HASH, NOMBRE FROM administradores WHERE USUARIO = ?');
-        $stmt->bind_param('s', $usuario);
-        $stmt->execute();
-        $admin = $stmt->get_result()->fetch_assoc();
-        $stmt->close();
+        $usuario = trim($_POST['usuario'] ?? '');
+        $password = $_POST['password'] ?? '';
 
-        if ($admin && password_verify($password, $admin['PASSWORD_HASH'])) {
-            session_regenerate_id(true);
-            $_SESSION['admin_id'] = $admin['Id'];
-            $_SESSION['admin_nombre'] = $admin['NOMBRE'];
-            header('Location: index.php');
-            exit;
+        if ($usuario === '' || $password === '') {
+            $error = 'Debe ingresar usuario y contraseña.';
+        } else {
+            $stmt = $conexion->prepare('SELECT Id, PASSWORD_HASH, NOMBRE FROM administradores WHERE USUARIO = ?');
+            $stmt->bind_param('s', $usuario);
+            $stmt->execute();
+            $admin = $stmt->get_result()->fetch_assoc();
+            $stmt->close();
+
+            if ($admin && password_verify($password, $admin['PASSWORD_HASH'])) {
+                session_regenerate_id(true);
+                $_SESSION['admin_id'] = $admin['Id'];
+                $_SESSION['admin_nombre'] = $admin['NOMBRE'];
+                // Opcional: Regenerar el token CSRF tras un login exitoso por mayor seguridad
+                $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+                header('Location: index.php');
+                exit;
+            }
+
+            $error = 'Usuario o contraseña incorrectos.';
         }
-
-        $error = 'Usuario o contraseña incorrectos.';
     }
 }
-
 $conexion->close();
 ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -66,13 +78,14 @@ $conexion->close();
       <div class="flex flex-col gap-1.5">
         <label class="text-sm font-semibold text-[#0D2137]">Usuario</label>
         <input type="text" name="usuario" required autofocus
-               class="h-11 px-3 border border-[#CBD5E1] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0284C7]">
+              class="h-11 px-3 border border-[#CBD5E1] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0284C7]">
       </div>
       <div class="flex flex-col gap-1.5">
         <label class="text-sm font-semibold text-[#0D2137]">Contraseña</label>
         <input type="password" name="password" required
-               class="h-11 px-3 border border-[#CBD5E1] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0284C7]">
+              class="h-11 px-3 border border-[#CBD5E1] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0284C7]">
       </div>
+      <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
       <button type="submit" class="mt-2 h-11 rounded-lg bg-[#0D2137] text-white font-semibold hover:bg-[#0284C7] transition-colors">
         Ingresar
       </button>

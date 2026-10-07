@@ -52,19 +52,22 @@ require __DIR__ . '/includes/layout_top.php';
     <div class="flex flex-col gap-1.5">
       <label class="text-sm font-semibold text-[#0D2137]">Contraseña actual</label>
       <input type="password" name="password_actual" required
-             class="h-11 px-3 border border-[#CBD5E1] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0284C7]">
+            class="h-11 px-3 border border-[#CBD5E1] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0284C7]">
     </div>
     <div class="flex flex-col gap-1.5">
       <label class="text-sm font-semibold text-[#0D2137]">Nueva contraseña</label>
       <input type="password" name="password_nueva" required minlength="8"
-             class="h-11 px-3 border border-[#CBD5E1] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0284C7]">
+            class="h-11 px-3 border border-[#CBD5E1] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0284C7]">
       <span class="text-xs text-[#64748B]">Mínimo 8 caracteres.</span>
     </div>
     <div class="flex flex-col gap-1.5">
       <label class="text-sm font-semibold text-[#0D2137]">Confirmar nueva contraseña</label>
       <input type="password" name="password_confirmar" required minlength="8"
-             class="h-11 px-3 border border-[#CBD5E1] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0284C7]">
+            class="h-11 px-3 border border-[#CBD5E1] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0284C7]">
     </div>
+    
+    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
+      
     <button type="submit" class="mt-2 inline-flex items-center justify-center gap-2 h-11 rounded-xl bg-[#0D2137] text-white font-semibold hover:bg-[#0284C7] transition-colors">
       <span class="material-symbols-outlined text-[18px]">lock_reset</span>
       Actualizar Contraseña

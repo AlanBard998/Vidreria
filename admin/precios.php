@@ -83,7 +83,7 @@ require __DIR__ . '/includes/layout_top.php';
             <div class="flex items-center gap-1">
               <span class="text-sm text-[#64748B]">$</span>
               <input type="number" step="1" min="0" name="linea[<?= (int)$linea['Id'] ?>]" value="<?= htmlspecialchars($linea['PRECIOBASE']) ?>"
-                     class="w-full h-10 px-2 border border-[#CBD5E1] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0284C7]">
+                    class="w-full h-10 px-2 border border-[#CBD5E1] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0284C7]">
             </div>
           </div>
           <?php endforeach; ?>
@@ -103,7 +103,7 @@ require __DIR__ . '/includes/layout_top.php';
         <div class="flex items-center gap-1">
           <span class="text-sm text-[#64748B]">$</span>
           <input type="number" step="1" min="0" name="cristal[<?= (int)$cristal['Id'] ?>]" value="<?= htmlspecialchars($cristal['PRECIO_METRO_CUADRADO']) ?>"
-                 class="w-full h-10 px-2 border border-[#CBD5E1] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0284C7]">
+                class="w-full h-10 px-2 border border-[#CBD5E1] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0284C7]">
           <span class="text-xs text-[#64748B] whitespace-nowrap">/ m²</span>
         </div>
       </div>
@@ -112,6 +112,8 @@ require __DIR__ . '/includes/layout_top.php';
   </div>
 
   <div>
+    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
+      
     <button type="submit" class="inline-flex items-center gap-2 h-11 px-6 rounded-xl bg-[#0D2137] text-white font-semibold hover:bg-[#0284C7] transition-colors">
       <span class="material-symbols-outlined text-[18px]">save</span>
       Guardar cambios

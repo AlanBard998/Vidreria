@@ -48,6 +48,8 @@ require __DIR__ . '/includes/layout_top.php';
         <td class="px-4 py-3">
           <form method="post" class="flex items-center gap-2">
             <input type="hidden" name="id" value="<?= (int)$row['Id'] ?>">
+            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
+      
             <select name="estado" onchange="this.form.submit()" class="text-xs font-semibold rounded-lg border border-[#CBD5E1] px-2 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#0284C7]">
               <?php foreach ($estadosValidos as $estado): ?>
               <option value="<?= $estado ?>" <?= $row['ESTADO'] === $estado ? 'selected' : '' ?>><?= $estado ?></option>
