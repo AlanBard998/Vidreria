@@ -8,34 +8,24 @@
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
   
   <title>Vidriería Lagos</title>
   
-  <style>
-    @layer base {
-      html, body { margin: 0; padding: 0; }
-      body { overscroll-behavior: none; }
-      main > :first-child { margin-top: 0 !important; }
-      main > :last-child { margin-bottom: 0 !important; }
-    }
-    ::-webkit-scrollbar { display: none; }
-  </style>
-  
-  <!-- Hoja de estilos de Tailwind compilada localmente -->
+  <!-- Tailwind v4 Compilado -->
   <link href="css/style.css" rel="stylesheet" />
 </head>
 
 <body class="bg-background font-body-md text-body-md text-on-surface antialiased">
+  
+  <!-- TOP BAR -->
   <header class="fixed top-0 left-0 w-full z-50">
-    <div class="w-full bg-primary-container text-on-primary font-body-sm text-body-sm px-gutter-mobile lg:px-gutter-desktop shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="w-full bg-primary-container text-on-primary font-body-sm text-body-sm px-gutter-mobile lg:px-gutter-desktop shadow-sm">
       <div class="max-w-container-max mx-auto h-9 flex items-center justify-between">
         <div class="flex items-center gap-space-xs truncate">
           <span class="material-symbols-outlined text-secondary-container text-[16px] shrink-0">verified</span>
-          <span class="font-medium tracking-tight truncate">Taller propio en Temuco • Cobertura en todo el Sur de Chile (Temuco, Pucón, Villarrica, Caburgua, Puerto Octay y Puerto Montt) • Más de 65 años de trayectoria</span>
+          <span class="font-medium tracking-tight truncate">Taller propio en Temuco • Cobertura en todo el Sur de Chile</span>
         </div>
         <div class="hidden md:flex items-center gap-space-lg shrink-0">
-          <!-- Número estandarizado -->
           <a class="flex items-center gap-space-2xs text-secondary-fixed hover:text-on-primary transition-colors" href="tel:+56989807490">
             <span class="material-symbols-outlined text-[16px]">phone_in_talk</span>
             <span class="font-label-sm text-label-sm">(+56 9) 8980 7490</span>
@@ -47,881 +37,134 @@
       </div>
     </div>
     
-    <div class="h-20 w-full bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-gutter-mobile lg:px-gutter-desktop">
+    <!-- NAVBAR -->
+    <div class="h-20 w-full bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm px-gutter-mobile lg:px-gutter-desktop">
       <div class="max-w-container-max mx-auto h-full flex items-center justify-between gap-space-md">
-        <div class="flex items-center gap-space-md">
-          <a class="flex items-center gap-space-sm focus:outline-none" data-path="inicio" href="#">
-            <img alt="Vidriería Lagos Logo" class="h-8 w-auto object-contain" id="img_logo" src="images/LogoVL.jpg" />
-            <div class="flex flex-col">
-              <!-- <span class="font-title-md text-title-md text-primary leading-tight tracking-tight uppercase">Vidriería Lagos</span> -->
-            </div>
-          </a>
-        </div>
+        <a class="flex items-center focus:outline-none" href="index.php">
+          <img alt="Vidriería Lagos Logo" class="h-10 w-auto object-contain" src="images/LogoVL.jpg" />
+        </a>
         
-        <nav class="hidden lg:flex items-center gap-space-xs xl:gap-space-sm" data-active-classes="bg-surface-container-high text-on-surface font-semibold rounded-lg">
-          <a aria-current="page" class="px-space-xs py-1.5 transition-colors bg-surface-container-high text-on-surface font-semibold rounded-lg" data-path="inicio" href="#">Inicio</a>
-          <a class="px-space-xs py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors" data-path="termopaneles-&-vidrios" href="#">Termopaneles & Vidrios</a>
-          <a class="px-space-xs py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors" data-path="ventanas-pvc" href="#">Ventanas PVC (Europeo / Americano)</a>
-          <a class="px-space-xs py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors" data-path="lineas-de-aluminio" href="#">Líneas de Aluminio (Línea QT)</a>
-          <a class="px-space-xs py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors" data-path="proyectos" href="#">Proyectos</a>
-          <a class="px-space-xs py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors" data-path="nosotros" href="#">Nosotros (+65 Años)</a>
+        <nav class="hidden lg:flex items-center gap-space-xs xl:gap-space-sm">
+          <a class="px-space-xs py-1.5 transition-colors bg-surface-container-high text-on-surface font-semibold rounded-lg" href="#">Inicio</a>
+          <a class="px-space-xs py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors" href="#">Termopaneles & Vidrios</a>
+          <a class="px-space-xs py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors" href="#">Ventanas PVC</a>
+          <a class="px-space-xs py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors" href="#">Líneas de Aluminio</a>
+          <a class="px-space-xs py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors" href="#">Proyectos</a>
         </nav>
         
         <div class="flex items-center gap-space-sm">
-          <a class="inline-flex items-center gap-space-2xs bg-primary-container text-on-primary hover:bg-secondary hover:text-on-secondary px-space-md py-2.5 rounded-xl font-label-md text-label-md transition-all shadow-[0_4px_16px_rgba(13,33,55,0.12)]" data-path="cotizar-proyecto" href="#">
+          <a class="inline-flex items-center gap-space-2xs bg-primary-container text-on-primary hover:bg-secondary px-space-md py-2.5 rounded-xl font-label-md transition-all shadow-md" href="#cotizador-expres">
             <span class="material-symbols-outlined text-[18px]">request_quote</span>
             <span class="hidden sm:inline">Solicitar Cotización Gratis</span>
-            <span class="sm:hidden">Cotizar</span>
           </a>
-          <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0">
-            <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
-          </div>
         </div>
       </div>
     </div>
   </header>
 
   <main class="w-full pt-[7.25rem] bg-surface">
-    <div class="flex flex-col w-full">
-      
-      <!-- HERO SECTION -->
-      <section class="relative w-full bg-surface-container-lowest overflow-hidden pb-space-3xl lg:pb-space-4xl">
-        <div class="absolute top-0 right-0 w-[45rem] h-[45rem] bg-secondary-fixed/30 rounded-full blur-3xl pointer-events-none -mr-40 -mt-20"></div>
-        <div class="absolute bottom-0 left-0 w-[35rem] h-[35rem] bg-surface-container-high/40 rounded-full blur-3xl pointer-events-none -ml-20"></div>
-        
-        <div class="relative max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop pt-space-xl lg:pt-space-2xl">
-          <div class="flex flex-wrap items-center gap-space-xs mb-space-lg">
-            <div class="inline-flex items-center gap-space-xs bg-surface-container-high/70 backdrop-blur-md px-space-md py-1.5 rounded-full text-primary shadow-sm">
-              <span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">stars</span>
-              <span class="font-eyebrow text-eyebrow tracking-wider uppercase font-bold text-on-surface">Temuco • Región de La Araucanía y Todo el Sur de Chile • Garantía Certificada • Fabricación Propia</span>
-            </div>
-          </div>
-          
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl lg:gap-space-2xl items-center">
-            <div class="lg:col-span-7 flex flex-col gap-space-md lg:gap-space-lg">
-              <h1 class="font-display-hero text-display-hero-mobile lg:text-display-hero text-primary tracking-tight font-extrabold leading-[1.12]">
-                Más de <span class="text-secondary">65 años</span> vistiendo de luz y confort sus espacios con maestría.
-              </h1>
-              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-                Especialistas en soluciones térmicas para el clima del sur de Chile: aislación extrema contra lluvia, frío y viento con termopaneles de alta eficiencia térmica y acústica (DVH), ventanería en PVC con estándares Europeos y Americanos, y cerramientos de vanguardia en aluminio Línea QT con taller industrial propio en Temuco.
-              </p>
-              
-              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md pt-space-xs">
-                <a class="inline-flex items-center justify-center gap-space-sm bg-secondary hover:bg-secondary-container hover:text-on-secondary-fixed text-on-secondary font-label-md text-label-md px-space-xl py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" href="#cotizador-expres">
-                  <span class="material-symbols-outlined text-[20px]">calculate</span>
-                  <span class="">Cotizar Mi Proyecto al Instante</span>
-                </a>
-                <!-- Enlace de WhatsApp actualizado -->
-                <a class="inline-flex items-center justify-center gap-space-sm bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md px-space-lg py-4 rounded-xl transition-all duration-200" href="https://wa.me/56989807490" target="_blank">
-                  <span class="material-symbols-outlined text-[20px] text-secondary">chat</span>
-                  <span class="">Hablar con un Especialista</span>
-                </a>
-              </div>
-              
-              <div class="grid grid-cols-3 gap-space-md pt-space-md">
-                <div class="flex flex-col">
-                  <span class="font-headline-lg text-headline-md lg:text-headline-lg font-extrabold text-primary">+25.000</span>
-                  <span class="font-body-sm text-body-sm text-on-surface-variant">Ventanas fabricadas con sello hermético</span>
-                </div>
-                <div class="flex flex-col">
-                  <span class="font-headline-lg text-headline-md lg:text-headline-lg font-extrabold text-secondary">Hasta -68%</span>
-                  <span class="font-body-sm text-body-sm text-on-surface-variant">Pérdida energética con DVH Low-E</span>
-                </div>
-                <div class="flex flex-col">
-                  <span class="font-headline-lg text-headline-md lg:text-headline-lg font-extrabold text-primary">100%</span>
-                  <span class="font-body-sm text-body-sm text-on-surface-variant">Garantía estructural y perfiles NCh</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="lg:col-span-5 relative">
-              <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-surface-container">
-                <img alt="Ventanal arquitectónico termopanel con vista panorámica de casa moderna" class="w-full h-[480px] lg:h-[560px] object-cover hover:scale-105 transition-transform duration-700 ease-out" id="img_slider" src="images/img_slider.jpg" />
-                <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
-                <div class="absolute bottom-6 left-6 right-6 bg-surface-container-lowest/90 backdrop-blur-xl p-space-md rounded-xl shadow-xl flex items-center justify-between">
-                  <div class="flex items-center gap-space-sm">
-                    <div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
-                      <span class="material-symbols-outlined text-[22px]">domain_verification</span>
-                    </div>
-                    <div class="flex flex-col">
-                      <span class="font-title-md text-title-md text-primary font-bold">Obra Residencial</span>
-                      <span class="font-label-sm text-label-sm text-on-surface-variant">Pucón, Lago Villarrica • 2024</span>
-                    </div>
-                  </div>
-                  <span class="hidden sm:inline-flex px-2.5 py-1 bg-surface-container-high rounded-full font-label-sm text-label-sm text-secondary font-bold">2024</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- QUICK QUOTE WIDGET (COTIZADOR EXPRÉS EN 3 PASOS) -->
-      <section class="w-full bg-surface-container-low py-space-3xl" id="cotizador-expres">
-        <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
-          <div class="text-center max-w-2xl mx-auto mb-space-2xl">
-            <span class="font-eyebrow text-eyebrow text-secondary uppercase font-bold tracking-widest">Presupuesto Rápido y Transparente</span>
-            <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-primary font-bold mt-space-2xs">Cotizador Exprés en 3 Pasos</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">Complete los requerimientos técnicos de su obra y reciba una valorización detallada en menos de 24 horas hábiles.</p>
-          </div>
-          
-          <div class="bg-surface-container-lowest rounded-2xl p-space-lg lg:p-space-2xl shadow-xl max-w-4xl mx-auto">
-            <div class="grid grid-cols-2 gap-space-xs mb-space-xl bg-surface-container-low p-1.5 rounded-xl max-w-2xl mx-auto">
-              <button class="step-btn active-tab flex items-center justify-center gap-space-xs py-3 rounded-lg font-label-md text-label-md transition-all bg-primary-container text-on-primary" id="step-tab-1" onclick="switchStep(1)">
-                <span class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs">1</span>
-                <span class="hidden sm:inline">Detalle del Requerimiento</span>
-              </button>
-              <button class="step-btn flex items-center justify-center gap-space-xs py-3 rounded-lg font-label-md text-label-md transition-all text-on-surface-variant hover:text-primary" id="step-tab-2" onclick="switchStep(2)">
-                <span class="w-6 h-6 rounded-full bg-surface-container text-on-surface flex items-center justify-center font-bold text-xs">2</span>
-                <span class="hidden sm:inline">Datos de Contacto</span>
-              </button>
-            </div>
-            
-            <form class="flex flex-col gap-space-xl" id="quote-form" onsubmit="handleQuoteSubmit(event)">
-              <!-- STEP 1 CONTENT -->
-              <div class="step-panel flex flex-col gap-space-lg" id="step-content-1">
-                <div class="flex items-center justify-between">
-                  <span class="font-headline-sm text-headline-sm text-primary font-bold">1. ¿Qué necesita cotizar o reparar?</span>
-                  <span class="font-label-sm text-label-sm text-secondary font-semibold">Paso 1 de 2</span>
-                </div>
-
-                <!-- MOSTRADOR VISUAL DINÁMICO (Oculto por defecto) -->
-                <div id="mostrador-visual" class="hidden bg-surface-container-low rounded-2xl p-6 border border-secondary-container shadow-inner transition-all duration-500 ease-in-out">
-                  <!-- El contenido se inyectará aquí vía JavaScript -->
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-                  
-                  <!-- OPCIÓN 1: SOLO CRISTAL -->
-                  <label class="product-choice-card cursor-pointer bg-surface-container-lowest border border-transparent hover:border-secondary-container p-space-md rounded-xl transition-all shadow-sm flex flex-col">
-                    <input class="hidden peer" name="product_type" onchange="updateRadioSelection(this)" type="radio" value="solo-cristal" />
-                    <div class="flex items-start justify-between">
-                      <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary text-[28px]">grid_view</span>
-                        <div>
-                          <span class="font-title-md text-title-md text-primary font-bold block">1. Solo Cristal</span>
-                          <span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Opacos, diseños, termopaneles, laminados.</span>
-                        </div>
-                      </div>
-                      <div class="radio-indicator w-5 h-5 rounded-full bg-surface-container flex items-center justify-center shrink-0">
-                        <span class="w-2 h-2 rounded-full bg-transparent transition-all"></span>
-                      </div>
-                    </div>
-                    <!-- Menú Oculto: Cristal -->
-                    <div class="sub-menu-options hidden mt-4 pt-4 border-t border-outline-variant flex-col gap-3">
-                      <div class="grid grid-cols-2 gap-3">
-                        <select name="cristal_tipo" class="w-full h-10 px-3 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary text-sm outline-none">
-                          <option value="">Tipo de Cristal...</option>
-                          <option value="incoloro">Incoloro / Transparente</option>
-                          <option value="opaco">Opaco / Pavonado</option>
-                          <option value="diseno">Con Diseño / Textura</option>
-                          <option value="termopanel">Termopanel (DVH)</option>
-                        </select>
-                        <select name="cristal_espesor" class="w-full h-10 px-3 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary text-sm outline-none">
-                          <option value="">Espesor...</option>
-                          <option value="4mm">4 mm</option>
-                          <option value="5mm">5 mm</option>
-                          <option value="6mm">6 mm</option>
-                          <option value="8mm">8 mm</option>
-                          <option value="10mm">10 mm</option>
-                        </select>
-                        <select name="cristal_seguridad" class="col-span-2 w-full h-10 px-3 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary text-sm outline-none">
-                          <option value="">Nivel de Seguridad...</option>
-                          <option value="crudo">Cristal Crudo (Normal)</option>
-                          <option value="templado">Cristal Templado (Seguridad 5x)</option>
-                          <option value="laminado">Cristal Laminado (Antirrobo/Seguridad)</option>
-                        </select>
-                        
-                        <!-- Botón Subir Foto -->
-                        <div class="col-span-2 mt-1">
-                          <label class="bg-surface-container hover:bg-surface-container-high text-primary px-3 py-2 rounded-lg text-sm font-semibold cursor-pointer border border-surface-container-high transition-colors w-full flex items-center justify-center gap-2">
-                            <span class="material-symbols-outlined text-[18px]">add_a_photo</span> Subir foto de referencia (Opcional)
-                            <input type="file" name="cristal_foto" accept="image/*" class="hidden">
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </label>
-
-                  <!-- OPCIÓN 2: ESPEJOS -->
-                  <label class="product-choice-card cursor-pointer bg-surface-container-lowest border border-transparent hover:border-secondary-container p-space-md rounded-xl transition-all shadow-sm flex flex-col">
-                    <input class="hidden peer" name="product_type" onchange="updateRadioSelection(this)" type="radio" value="espejo" />
-                    <div class="flex items-start justify-between">
-                      <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary text-[28px]">crop_portrait</span>
-                        <div>
-                          <span class="font-title-md text-title-md text-primary font-bold block">2. Espejos</span>
-                          <span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">A medida, pulidos, con o sin marco.</span>
-                        </div>
-                      </div>
-                      <div class="radio-indicator w-5 h-5 rounded-full bg-surface-container flex items-center justify-center shrink-0">
-                        <span class="w-2 h-2 rounded-full bg-transparent transition-all"></span>
-                      </div>
-                    </div>
-                    <!-- Menú Oculto: Espejos -->
-                    <div class="sub-menu-options hidden mt-4 pt-4 border-t border-outline-variant flex-col gap-3">
-                      <div class="grid grid-cols-2 gap-3">
-                        <input type="number" name="espejo_ancho" placeholder="Ancho (cm)" class="w-full h-10 px-3 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary text-sm outline-none">
-                        <input type="number" name="espejo_alto" placeholder="Alto (cm)" class="w-full h-10 px-3 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary text-sm outline-none">
-                        <select name="espejo_espesor" class="w-full h-10 px-3 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary text-sm outline-none">
-                          <option value="">Espesor (mm)...</option>
-                          <option value="3mm">3 mm</option>
-                          <option value="4mm">4 mm</option>
-                          <option value="5mm">5 mm</option>
-                        </select>
-                        <select name="espejo_terminacion" class="w-full h-10 px-3 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary text-sm outline-none">
-                          <option value="">Terminación...</option>
-                          <option value="corte">Corte Vivo</option>
-                          <option value="pulido">Bordes Pulidos</option>
-                          <option value="biselado">Biselado</option>
-                        </select>
-                        <select name="espejo_marco" class="col-span-2 w-full h-10 px-3 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary text-sm outline-none">
-                          <option value="">Tipo de Marco...</option>
-                          <option value="sin_marco">Sin Marco</option>
-                          <option value="marco_aluminio">Marco de Aluminio</option>
-                          <option value="led">Retroiluminado LED</option>
-                        </select>
-                        
-                        <!-- Botón Subir Foto -->
-                        <div class="col-span-2 mt-1">
-                          <label class="bg-surface-container hover:bg-surface-container-high text-primary px-3 py-2 rounded-lg text-sm font-semibold cursor-pointer border border-surface-container-high transition-colors w-full flex items-center justify-center gap-2">
-                            <span class="material-symbols-outlined text-[18px]">add_a_photo</span> Subir foto del espacio o diseño
-                            <input type="file" name="espejo_foto" accept="image/*" class="hidden">
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </label>
-
-                  <!-- OPCIÓN 3: VENTANAS -->
-                  <label class="product-choice-card cursor-pointer bg-surface-container-lowest border border-transparent hover:border-secondary-container p-space-md rounded-xl transition-all shadow-sm flex flex-col relative">
-                    <input class="hidden peer" name="product_type" onchange="updateRadioSelection(this)" type="radio" value="ventana" />
-                    <div class="flex items-start justify-between">
-                      <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary text-[28px]">window</span>
-                        <div>
-                          <span class="font-title-md text-title-md text-primary font-bold block">3. Ventanas / Puertas</span>
-                          <span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">En PVC o Aluminio, medidas y líneas.</span>
-                        </div>
-                      </div>
-                      <div class="radio-indicator w-5 h-5 rounded-full bg-surface-container flex items-center justify-center shrink-0">
-                        <span class="w-2 h-2 rounded-full bg-transparent transition-all"></span>
-                      </div>
-                    </div>
-                    <!-- Menú Oculto: Ventanas -->
-                    <div class="sub-menu-options hidden mt-4 pt-4 border-t border-outline-variant flex-col gap-3">
-                      <div class="grid grid-cols-2 gap-3">
-                        <input type="number" name="ventana_ancho" placeholder="Ancho (cm)" class="w-full h-10 px-3 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary text-sm outline-none">
-                        <input type="number" name="ventana_alto" placeholder="Alto (cm)" class="w-full h-10 px-3 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary text-sm outline-none">
-                        <select name="ventana_material" class="col-span-2 w-full h-10 px-3 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary text-sm outline-none">
-                          <option value="">Línea y Material...</option>
-                          <option value="pvc_blanco">PVC Europeo Blanco</option>
-                          <option value="pvc_foliado">PVC Folio (Madera/Gris)</option>
-                          <option value="pvc_americano">PVC Americano</option>
-                          <option value="alum_qt">Aluminio Línea QT</option>
-                        </select>
-                        <select id="select-cantidad" name="ventana_cantidad" class="col-span-2 w-full h-10 px-3 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary text-sm outline-none font-bold text-primary">
-                          <option value="1-3">Cantidad: 1 a 3 unidades</option>
-                          <option value="4-8">Cantidad: 4 a 8 unidades</option>
-                          <option value="9+">Obra Mayor: 9 o más unidades</option>
-                        </select>
-
-                        <!-- Botón Subir Foto -->
-                        <div class="col-span-2 mt-1">
-                          <label class="bg-surface-container hover:bg-surface-container-high text-primary px-3 py-2 rounded-lg text-sm font-semibold cursor-pointer border border-surface-container-high transition-colors w-full flex items-center justify-center gap-2">
-                            <span class="material-symbols-outlined text-[18px]">add_a_photo</span> Subir foto de ventana a igualar/reemplazar
-                            <input type="file" name="ventana_foto" accept="image/*" class="hidden">
-                          </label>
-                        </div>
-                      </div>
-                      
-                      <!-- Alerta Obra Mayor integrada -->
-                      <div id="alerta-obra-mayor" class="hidden mt-2 p-3 bg-primary-container text-on-primary rounded-lg border border-secondary shadow-md">
-                        <div class="flex items-start gap-2">
-                          <span class="material-symbols-outlined text-secondary text-[20px]">info</span>
-                          <div class="flex flex-col gap-1">
-                            <h4 class="font-bold text-sm text-on-primary leading-tight">¿Proyecto grande?</h4>
-                            <p class="text-xs text-on-primary-container">Use nuestra planilla dinámica para detallar cada paño por separado.</p>
-                            <a href="cotizador-avanzado.html" class="inline-flex items-center gap-1 mt-1 text-secondary font-bold text-xs hover:text-white transition-colors">
-                              Ir al Cotizador Avanzado <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </label>
-
-                  <!-- OPCIÓN 4: REPARACIÓN -->
-                  <label class="product-choice-card cursor-pointer bg-surface-container-lowest border border-transparent hover:border-secondary-container p-space-md rounded-xl transition-all shadow-sm flex flex-col">
-                    <input class="hidden peer" name="product_type" onchange="updateRadioSelection(this)" type="radio" value="reparacion" />
-                    <div class="flex items-start justify-between">
-                      <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary text-[28px]">build</span>
-                        <div>
-                          <span class="font-title-md text-title-md text-primary font-bold block">4. Reparación / Mantención</span>
-                          <span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Visitas a domicilio, cambios de piezas.</span>
-                        </div>
-                      </div>
-                      <div class="radio-indicator w-5 h-5 rounded-full bg-surface-container flex items-center justify-center shrink-0">
-                        <span class="w-2 h-2 rounded-full bg-transparent transition-all"></span>
-                      </div>
-                    </div>
-                    <!-- Menú Oculto: Reparación -->
-                    <div class="sub-menu-options hidden mt-4 pt-4 border-t border-outline-variant flex-col gap-3">
-                      <textarea name="reparacion_desc" rows="2" placeholder="Describa el problema (Ej: Ruedas trabadas, vidrio trizado...)" class="w-full p-3 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary text-sm resize-none outline-none"></textarea>
-                      
-                      <!-- Botón Subir Foto -->
-                      <label class="bg-surface-container hover:bg-surface-container-high text-primary px-3 py-2 rounded-lg text-sm font-semibold cursor-pointer border border-surface-container-high transition-colors w-full flex items-center justify-center gap-2">
-                        <span class="material-symbols-outlined text-[18px]">add_a_photo</span> Adjuntar Foto del Problema
-                        <input type="file" name="reparacion_foto" accept="image/*" class="hidden">
-                      </label>
-
-                      <div class="flex flex-col gap-1 mt-1">
-                        <span class="text-xs font-semibold text-primary">Día preferido para visita técnica:</span>
-                        <input type="datetime-local" name="reparacion_fecha" class="w-full h-10 px-3 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary text-sm text-on-surface-variant outline-none">
-                      </div>
-                    </div>
-                  </label>
-
-                </div>
-                <div class="flex justify-end pt-space-md">
-                  <button class="inline-flex items-center gap-space-xs bg-primary-container text-on-primary px-space-xl py-3 rounded-xl font-label-md text-label-md hover:bg-secondary transition-all shadow-md" onclick="switchStep(2)" type="button">
-                    <span class="">Continuar a Datos de Contacto</span>
-                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                  </button>
-                </div>
-              </div>
-
-              
-              <!-- STEP 2 CONTENT -->
-              <div class="step-panel hidden flex-col gap-space-lg" id="step-content-2">
-                <div class="flex items-center justify-between">
-                  <span class="font-headline-sm text-headline-sm text-primary font-bold">2. Datos para enviar la propuesta formal:</span>
-                  <span class="font-label-sm text-label-sm text-secondary font-semibold">Paso 2 de 2</span>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-                  <div class="flex flex-col gap-space-xs">
-                    <label class="font-label-md text-label-md text-primary font-semibold">Nombre Completo *</label>
-                    <input class="w-full h-11 px-space-md bg-surface-container-lowest rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-secondary text-primary font-body-md text-body-md" name="client_name" placeholder="Ej: Marcela González" required="" type="text" />
-                  </div>
-                  <div class="flex flex-col gap-space-xs">
-                    <label class="font-label-md text-label-md text-primary font-semibold">WhatsApp / Teléfono Móvil *</label>
-                    <input class="w-full h-11 px-space-md bg-surface-container-lowest rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-secondary text-primary font-body-md text-body-md" name="client_phone" placeholder="+56 9 9876 5432" required="" type="tel" />
-                  </div>
-                  <div class="flex flex-col gap-space-xs">
-                    <label class="font-label-md text-label-md text-primary font-semibold">Correo Electrónico *</label>
-                    <input class="w-full h-11 px-space-md bg-surface-container-lowest rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-secondary text-primary font-body-md text-body-md" name="client_email" placeholder="marcela@empresa.cl" required="" type="email" />
-                  </div>
-                  <div class="flex flex-col gap-space-xs">
-                    <label class="font-label-md text-label-md text-primary font-semibold">Comuna o Ciudad de Instalación *</label>
-                    <input class="w-full h-11 px-space-md bg-surface-container-lowest rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-secondary text-primary font-body-md text-body-md" name="client_location" placeholder="Ej: Temuco, Pucón, Villarrica, Puerto Octay, Puerto Montt..." required="" type="text" />
-                  </div>
-                </div>
-                <div class="flex flex-col gap-space-xs">
-                  <label class="font-label-md text-label-md text-primary font-semibold">Detalles adicionales, planos o especificaciones especiales (Opcional)</label>
-                  <textarea class="w-full p-space-md bg-surface-container-lowest rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-secondary text-primary font-body-md text-body-md" name="notes" placeholder="Indique si requiere desmontaje de ventanería antigua, si es en zona lacustre expuesta a temporales o si cuenta con planos arquitectónicos..." rows="3"></textarea>
-                </div>
-                <div class="flex items-center gap-space-sm bg-surface-container-high/60 p-space-sm rounded-xl">
-                  <span class="material-symbols-outlined text-secondary text-[22px]">verified</span>
-                  <p class="font-body-sm text-body-sm text-on-surface">Al solicitar cotización, un técnico asignado de nuestra planta en Temuco revisará su proyecto y coordinará visita a terreno sin costo en todo el sur.</p>
-                </div>
-                <div class="flex items-center justify-between pt-space-md">
-                  <button class="inline-flex items-center gap-space-xs text-on-surface-variant hover:text-primary px-space-md py-3 font-label-md text-label-md" onclick="switchStep(1)" type="button">
-                    <span class="material-symbols-outlined text-[18px]">arrow_back</span>
-                    <span class="">Volver</span>
-                  </button>
-                  <button class="inline-flex items-center gap-space-sm bg-secondary hover:bg-secondary-container hover:text-on-secondary-fixed text-on-secondary px-space-2xl py-3.5 rounded-xl font-label-md text-label-md shadow-lg hover:shadow-xl transition-all font-bold" type="submit">
-                    <span class="material-symbols-outlined text-[20px]">send</span>
-                    <span class="">Solicitar Presupuesto Gratuito (< 24 hrs)</span>
-                  </button>
-                </div>
-              </div>
-            </form>
-            
-            <!-- Dynamic Success Notice on Submit -->
-            <div class="hidden flex-col items-center justify-center text-center p-space-2xl bg-surface-container-low rounded-xl" id="quote-success-msg">
-              <div class="w-16 h-16 rounded-full bg-secondary text-on-secondary flex items-center justify-center mb-space-md shadow-lg">
-                <span class="material-symbols-outlined text-[36px]">check_circle</span>
-              </div>
-              <h3 class="font-headline-md text-headline-md text-primary font-bold">¡Solicitud Recibida con Éxito!</h3>
-              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mt-space-xs">
-                Nuestro equipo técnico de Vidriería Lagos Temuco revisará sus datos y le remitirá una propuesta valorizada a su correo y WhatsApp antes de 24 horas.
-              </p>
-              <!-- Enlace de WhatsApp actualizado -->
-              <a class="mt-space-lg inline-flex items-center gap-space-xs bg-primary-container text-on-primary px-space-lg py-3 rounded-xl font-label-md text-label-md hover:bg-secondary transition-all" href="https://wa.me/56989807490" target="_blank">
-                <span class="material-symbols-outlined text-[18px]">chat</span>
-                <span class="">Acelerar atención por WhatsApp</span>
+    <!-- HERO SECTION -->
+    <section class="relative w-full bg-surface-container-lowest overflow-hidden pb-space-3xl lg:pb-space-4xl pt-space-xl">
+      <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+          <div class="lg:col-span-7 flex flex-col gap-space-lg">
+            <h1 class="font-display-hero text-[2.5rem] lg:text-display-hero text-primary tracking-tight font-extrabold leading-[1.12]">
+              Más de <span class="text-secondary">65 años</span> vistiendo de luz y confort sus espacios con maestría.
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+              Especialistas en soluciones térmicas para el clima del sur de Chile: aislación extrema contra lluvia, frío y viento con termopaneles de alta eficiencia térmica y acústica (DVH), ventanería en PVC con estándares Europeos y Americanos, y cerramientos de vanguardia en aluminio Línea QT con taller industrial propio en Temuco.
+            </p>
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md pt-space-xs">
+              <a class="inline-flex items-center justify-center gap-space-sm bg-secondary text-on-secondary font-label-md px-space-xl py-4 rounded-xl shadow-lg hover:bg-secondary-container hover:text-primary transition-all" href="#cotizador-expres">
+                <span class="material-symbols-outlined text-[20px]">calculate</span> Cotizar Mi Proyecto al Instante
               </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- CORE PRODUCT & LINE CATALOG -->
-      <section class="w-full bg-surface-container-lowest py-space-3xl lg:py-space-4xl">
-        <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
-          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-2xl">
-            <div class="flex flex-col gap-space-2xs max-w-2xl">
-              <span class="font-eyebrow text-eyebrow text-secondary uppercase font-bold tracking-widest">Catálogo de Alta Gama</span>
-              <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-primary font-bold">Sistemas de Vidrio & Perfilería Certificada</h2>
-              <p class="font-body-lg text-body-lg text-on-surface-variant">Diseñados y manufacturados para entregar el máximo confort higrotérmico y estanqueidad contra temporales del sur de Chile.</p>
+          <div class="lg:col-span-5 relative">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-surface-container">
+              <img alt="Ventanal arquitectónico termopanel" class="w-full h-[480px] lg:h-[560px] object-cover hover:scale-105 transition-transform duration-700 ease-out" src="images/img_slider.jpg" />
             </div>
-            <a class="inline-flex items-center gap-space-2xs text-secondary hover:text-primary font-label-md text-label-md transition-colors" href="#cotizador-expres">
-              <span class="">Solicitar muestra o catálogo PDF</span>
-              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COTIZADOR CON PHP BACKEND -->
+    <section class="w-full bg-surface-container-low py-space-3xl" id="cotizador-expres">
+      <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+        <div class="text-center max-w-2xl mx-auto mb-space-2xl">
+          <span class="font-eyebrow text-secondary uppercase font-bold tracking-widest">Presupuesto Rápido y Transparente</span>
+          <h2 class="font-headline-lg text-primary font-bold mt-space-2xs">Cotizador Exprés en 3 Pasos</h2>
+        </div>
+        
+        <div class="bg-surface-container-lowest rounded-2xl p-space-lg lg:p-space-2xl shadow-xl max-w-4xl mx-auto">
+          <!-- Formulario conectado a procesador PHP -->
+          <form action="procesadores/guardar_cotizacion.php" method="POST" enctype="multipart/form-data" class="flex flex-col gap-space-xl">
+            <!-- Paso 1 (Simplificado visualmente) -->
+            <div class="flex flex-col gap-space-md">
+              <span class="font-headline-sm text-primary font-bold">1. ¿Qué necesita cotizar o reparar?</span>
+              <select name="product_type" class="w-full h-12 px-4 bg-surface rounded-lg border border-surface-container-high focus:ring-2 focus:ring-secondary outline-none text-primary font-body-md" required>
+                <option value="">Seleccione una opción...</option>
+                <option value="termopanel">Termopaneles a Medida (DVH)</option>
+                <option value="pvc">Ventanas PVC (Europeo / Americano)</option>
+                <option value="aluminio">Línea Aluminio QT</option>
+                <option value="reparacion">Servicio de Reparación / Mantención</option>
+              </select>
+            </div>
+
+            <!-- Paso 2: Datos del Cliente -->
+            <div class="flex flex-col gap-space-md pt-space-md border-t border-surface-container-high">
+              <span class="font-headline-sm text-primary font-bold">2. Datos de Contacto</span>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                <input type="text" name="client_name" placeholder="Nombre Completo *" required class="w-full h-11 px-space-md bg-surface-container-low rounded-lg focus:ring-2 focus:ring-secondary text-primary font-body-md outline-none" />
+                <input type="tel" name="client_phone" placeholder="WhatsApp / Teléfono *" required class="w-full h-11 px-space-md bg-surface-container-low rounded-lg focus:ring-2 focus:ring-secondary text-primary font-body-md outline-none" />
+                <input type="text" name="client_location" placeholder="Ciudad / Comuna *" required class="w-full h-11 px-space-md bg-surface-container-low rounded-lg focus:ring-2 focus:ring-secondary text-primary font-body-md outline-none" />
+              </div>
+              <textarea name="notes" placeholder="Detalles adicionales o dimensiones (Opcional)" rows="3" class="w-full p-space-md bg-surface-container-low rounded-lg focus:ring-2 focus:ring-secondary text-primary font-body-md outline-none"></textarea>
+            </div>
+
+            <div class="flex justify-end pt-space-md">
+              <button type="submit" class="inline-flex items-center gap-space-sm bg-secondary text-on-secondary px-space-2xl py-3.5 rounded-xl font-label-md shadow-lg hover:bg-secondary-container hover:text-primary transition-all font-bold">
+                Solicitar Presupuesto Gratuito
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO LLAMADA RÁPIDA -->
+    <section class="w-full bg-primary-container text-on-primary py-space-3xl lg:py-space-4xl">
+      <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+        <div class="bg-primary rounded-3xl p-space-xl lg:p-space-3xl shadow-2xl relative overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+          <div class="lg:col-span-7 flex flex-col gap-space-md">
+            <span class="font-eyebrow text-secondary-container tracking-widest uppercase font-bold">Atención Inmediata</span>
+            <h2 class="font-headline-lg text-on-primary font-bold">¿Tiene un plano o necesita renovar hoy mismo?</h2>
+            <p class="font-body-lg text-on-primary-container">Nuestros ingenieros lo asesoran directamente en obra en Temuco, Villarrica, Pucón y Puerto Montt.</p>
           </div>
           
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-xl">
-            <!-- CARD 1 -->
-            <div class="bg-surface-container-low rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div class="relative h-64 overflow-hidden bg-surface-container">
-                <div class="w-full h-full bg-cover bg-center" data-alt="Close up architectural photo of double glazed insulated glass unit DVH" id="img_producto_termopanel" style="background-image: url('images/img_producto_termopanel.jpg')"></div>
-                <div class="absolute top-4 left-4 bg-primary-container text-on-primary px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm font-bold shadow-md">
-                  Aislación Térmica NCh Sur
-                </div>
-              </div>
-              <div class="p-space-xl flex flex-col gap-space-md flex-grow justify-between">
-                <div class="flex flex-col gap-space-xs">
-                  <h3 class="font-headline-md text-headline-md text-primary font-bold">Termopaneles de Alta Eficiencia (DVH)</h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Unidades de Doble Vidriado Hermético fabricadas en nuestro taller propio de Temuco con doble barrera de estanqueidad (butilo + polisulfuro/silicona estructural). Eliminan 100% la condensación por frío austral, resisten temporales severos y reducen el ruido exterior drásticamente.
-                  </p>
-                </div>
-                <div class="grid grid-cols-2 gap-space-xs bg-surface-container-lowest p-space-md rounded-xl">
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">volume_off</span><span class="font-body-sm text-body-sm font-semibold text-primary">Aislación Acústica: -38 dB</span></div>
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">thermostat</span><span class="font-body-sm text-body-sm font-semibold text-primary">Valor U: 1.3 W/m²K</span></div>
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">sunny</span><span class="font-body-sm text-body-sm font-semibold text-primary">Filtro UV hasta 99%</span></div>
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">shield</span><span class="font-body-sm text-body-sm font-semibold text-primary">Garantía Hermética 10 Años</span></div>
-                </div>
-                <div class="pt-space-xs flex items-center justify-between">
-                  <span class="font-title-md text-title-md text-secondary font-bold">A Medida Exacta</span>
-                  <a class="inline-flex items-center gap-space-xs bg-primary-container text-on-primary px-space-md py-2.5 rounded-xl font-label-md text-label-md hover:bg-secondary transition-all" href="#cotizador-expres">
-                    <span class="">Cotizar DVH</span>
-                    <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-            <!-- CARD 2 -->
-            <div class="bg-surface-container-low rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div class="relative h-64 overflow-hidden bg-surface-container">
-                <img alt="Corte técnico y render de ventana oscilobatiente de PVC europeo" class="w-full h-full object-cover" id="img_producto_pvc" src="images/img_producto_pvc.jpg" />
-                <div class="absolute top-4 left-4 bg-secondary text-on-secondary px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm font-bold shadow-md">
-                  PVC Multicámara Reforzado
-                </div>
-                <div class="absolute bottom-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md text-primary font-eyebrow text-eyebrow font-bold px-2.5 py-1 rounded">
-                  LÍNEA EUROPEA & AMERICANA
-                </div>
-              </div>
-              <div class="p-space-xl flex flex-col gap-space-md flex-grow justify-between">
-                <div class="flex flex-col gap-space-xs">
-                  <h3 class="font-headline-md text-headline-md text-primary font-bold">Ventanas PVC: Estilo Europeo y Americano</h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Perfilería de alta densidad con refuerzo de acero galvanizado interior de 1.5mm. Sellado perimetral estanco concebido para resistir temporales de viento y lluvia copiosa en La Araucanía y Los Lagos, asegurando nula filtración de aire y agua.
-                  </p>
-                </div>
-                <div class="grid grid-cols-2 gap-space-xs bg-surface-container-lowest p-space-md rounded-xl">
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">lock</span><span class="font-body-sm text-body-sm font-semibold text-primary">Cierre Perimetral Multipunto</span></div>
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">format_paint</span><span class="font-body-sm text-body-sm font-semibold text-primary">Foliados: Blanco, Grafito, Roble</span></div>
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">cyclone</span><span class="font-body-sm text-body-sm font-semibold text-primary">Resistencia Viento Clase C5</span></div>
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">water_drop</span><span class="font-body-sm text-body-sm font-semibold text-primary">Cero Filtración de Lluvia</span></div>
-                </div>
-                <div class="pt-space-xs flex items-center justify-between">
-                  <span class="font-title-md text-title-md text-secondary font-bold">Fabricación In-House Temuco</span>
-                  <a class="inline-flex items-center gap-space-xs bg-primary-container text-on-primary px-space-md py-2.5 rounded-xl font-label-md text-label-md hover:bg-secondary transition-all" href="#cotizador-expres">
-                    <span class="">Cotizar PVC</span>
-                    <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-            <!-- CARD 3 -->
-            <div class="bg-surface-container-low rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div class="relative h-64 overflow-hidden bg-surface-container">
-                <div class="w-full h-full bg-cover bg-center" data-alt="Architectural modern villa interior with large slim aluminum sliding doors" id="img_producto_aluminio" style="background-image: url('images/img_producto_aluminio.jpg')"></div>
-                <div class="absolute top-4 left-4 bg-primary-container text-on-primary px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm font-bold shadow-md">
-                  Serie QT / Grandes Luces
-                </div>
-                <div class="absolute bottom-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md text-secondary font-eyebrow text-eyebrow font-bold px-2.5 py-1 rounded">
-                  ANODIZADO & ELECTROSTÁTICO
-                </div>
-              </div>
-              <div class="p-space-xl flex flex-col gap-space-md flex-grow justify-between">
-                <div class="flex flex-col gap-space-xs">
-                  <h3 class="font-headline-md text-headline-md text-primary font-bold">Líneas de Aluminio Arquitectónico (Línea QT)</h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Diseñadas para proyectos de arquitectura contemporánea que exigen perfiles esbeltos y paños monumentales de piso a cielo. Gran inercia estructural, resistencia a la corrosión y acabados en titanio, mate y negro texturado.
-                  </p>
-                </div>
-                <div class="grid grid-cols-2 gap-space-xs bg-surface-container-lowest p-space-md rounded-xl">
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">height</span><span class="font-body-sm text-body-sm font-semibold text-primary">Alturas hasta 3.20 metros</span></div>
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">palette</span><span class="font-body-sm text-body-sm font-semibold text-primary">Pintura electrostática certificada</span></div>
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">speed</span><span class="font-body-sm text-body-sm font-semibold text-primary">Rodamientos de aguja alta carga</span></div>
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">straighten</span><span class="font-body-sm text-body-sm font-semibold text-primary">Perfilería esbelta y limpia</span></div>
-                </div>
-                <div class="pt-space-xs flex items-center justify-between">
-                  <span class="font-title-md text-title-md text-secondary font-bold">Obras & Residencial</span>
-                  <a class="inline-flex items-center gap-space-xs bg-primary-container text-on-primary px-space-md py-2.5 rounded-xl font-label-md text-label-md hover:bg-secondary transition-all" href="#cotizador-expres">
-                    <span class="">Cotizar Aluminio</span>
-                    <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-            <!-- CARD 4 -->
-            <div class="bg-surface-container-low rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div class="relative h-64 overflow-hidden bg-surface-container">
-                <div class="w-full h-full bg-cover bg-center" data-alt="Luxury bathroom and terrace with frameless tempered glass shower door" id="img_producto_templado" style="background-image: url('images/img_producto_templado.jpg')"></div>
-                <div class="absolute top-4 left-4 bg-secondary text-on-secondary px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm font-bold shadow-md">
-                  Cristal de Seguridad Templado
-                </div>
-                <div class="absolute bottom-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md text-primary font-eyebrow text-eyebrow font-bold px-2.5 py-1 rounded">
-                  8MM Y 10MM CERTIFICADO
-                </div>
-              </div>
-              <div class="p-space-xl flex flex-col gap-space-md flex-grow justify-between">
-                <div class="flex flex-col gap-space-xs">
-                  <h3 class="font-headline-md text-headline-md text-primary font-bold">Templados, Laminados y Shower Doors</h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Soluciones integrales de seguridad: barandas panorámicas auto-portantes para terrazas, mamparas de acceso para locales u oficinas y shower doors con rodamientos de acero inoxidable grado 304 de suave deslizamiento.
-                  </p>
-                </div>
-                <div class="grid grid-cols-2 gap-space-xs bg-surface-container-lowest p-space-md rounded-xl">
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span><span class="font-body-sm text-body-sm font-semibold text-primary">Templado térmico 5x resistencia</span></div>
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">hardware</span><span class="font-body-sm text-body-sm font-semibold text-primary">Herrajes Acero Inox 304</span></div>
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">security</span><span class="font-body-sm text-body-sm font-semibold text-primary">Laminados PVB antirrobo</span></div>
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">architecture</span><span class="font-body-sm text-body-sm font-semibold text-primary">Instalación con Nivel Láser</span></div>
-                </div>
-                <div class="pt-space-xs flex items-center justify-between">
-                  <span class="font-title-md text-title-md text-secondary font-bold">Seguridad Total</span>
-                  <a class="inline-flex items-center gap-space-xs bg-primary-container text-on-primary px-space-md py-2.5 rounded-xl font-label-md text-label-md hover:bg-secondary transition-all" href="#cotizador-expres">
-                    <span class="">Cotizar Cristal</span>
-                    <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div class="lg:col-span-5 flex flex-col gap-space-md bg-surface-container-lowest text-primary p-space-xl rounded-2xl shadow-xl">
+            <span class="font-title-md font-bold text-primary">Le devolvemos el llamado en 15 minutos:</span>
+            <!-- Formulario conectado a procesador PHP -->
+            <form action="procesadores/guardar_llamada.php" method="POST" class="flex flex-col gap-space-sm">
+              <input name="nombre" placeholder="Su Nombre" required class="w-full h-11 px-space-md bg-surface-container-low rounded-lg focus:ring-2 focus:ring-secondary text-primary outline-none" type="text" />
+              <input name="telefono" placeholder="Su Teléfono / WhatsApp" required class="w-full h-11 px-space-md bg-surface-container-low rounded-lg focus:ring-2 focus:ring-secondary text-primary outline-none" type="tel" />
+              <button type="submit" class="w-full py-3.5 bg-secondary text-on-secondary rounded-xl font-bold transition-all shadow-md hover:bg-secondary-container hover:text-primary">
+                Solicitar Llamada Inmediata
+              </button>
+            </form>
           </div>
         </div>
-      </section>
-
-      <!-- 65 AÑOS DE TRAYECTORIA Y MAESTRÍA -->
-      <section class="w-full bg-primary text-on-primary py-space-3xl lg:py-space-4xl relative overflow-hidden">
-        <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop relative z-10">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
-            <div class="lg:col-span-7 flex flex-col gap-space-lg">
-              <div class="inline-flex items-center gap-space-xs bg-primary-container px-space-md py-1.5 rounded-full w-fit">
-                <span class="material-symbols-outlined text-secondary-container text-[18px]">history_edu</span>
-                <span class="font-eyebrow text-eyebrow text-secondary-container tracking-widest uppercase font-bold">Desde 1959 en Temuco y el Sur de Chile</span>
-              </div>
-              <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg font-bold text-on-primary tracking-tight">
-                65 años combinando maestría artesanal con ingeniería de precisión.
-              </h2>
-              <p class="font-body-lg text-body-lg text-on-primary-container leading-relaxed">
-                Fundada en 1959 por una familia de artesanos vidrieros en Temuco, Vidriería Lagos ha evolucionado de un taller clásico de corte a un centro integral de mecanizado con líneas robotizadas para DVH, termo-soldado de perfiles PVC y ensamble de carpintería de aluminio, entregando soluciones térmicas a cientos de hogares y proyectos en Temuco, Villarrica, Pucón y la cuenca del Llanquihue.
-              </p>
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md pt-space-xs">
-                <div class="bg-primary-container p-space-md rounded-xl flex flex-col gap-space-2xs">
-                  <span class="material-symbols-outlined text-secondary-container text-[26px]">square_foot</span>
-                  <span class="font-title-md text-title-md font-bold text-on-primary">Medición en Terreno</span>
-                  <span class="font-body-sm text-body-sm text-on-primary-container">Asesoría en obra en Temuco, Villarrica, Pucón, Puerto Octay y Puerto Montt sin costo adicional.</span>
-                </div>
-                <div class="bg-primary-container p-space-md rounded-xl flex flex-col gap-space-2xs">
-                  <span class="material-symbols-outlined text-secondary-container text-[26px]">schedule</span>
-                  <span class="font-title-md text-title-md font-bold text-on-primary">Plazos Respetados</span>
-                  <span class="font-body-sm text-body-sm text-on-primary-container">Compromiso contractual de entrega y cuadrillas de montaje con supervisión fija.</span>
-                </div>
-                <div class="bg-primary-container p-space-md rounded-xl flex flex-col gap-space-2xs">
-                  <span class="material-symbols-outlined text-secondary-container text-[26px]">support_agent</span>
-                  <span class="font-title-md text-title-md font-bold text-on-primary">Postventa Real</span>
-                  <span class="font-body-sm text-body-sm text-on-primary-container">65 años de respaldo: si necesita calibración o reemplazo futuro, siempre estamos aquí.</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="lg:col-span-5 relative">
-              <div class="bg-surface-container-low rounded-2xl p-space-xl text-primary shadow-2xl flex flex-col gap-space-lg">
-                <div class="flex items-center justify-between">
-                  <div class="flex flex-col">
-                    <span class="font-display-hero text-headline-lg lg:text-display-hero font-extrabold text-secondary leading-none">65</span>
-                    <span class="font-eyebrow text-eyebrow uppercase tracking-wider font-bold text-on-surface-variant">Años Ininterrumpidos</span>
-                  </div>
-                  <div class="w-14 h-14 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
-                    <span class="material-symbols-outlined text-[32px]">military_tech</span>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-space-sm font-body-md text-body-md text-on-surface">
-                  <div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">check_circle</span><span class="">Planta de producción con más de 1.400 m² de taller propio en Temuco.</span></div>
-                  <div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">check_circle</span><span class="">Maquinaria computarizada de corte de cristal y doble sellado hermético.</span></div>
-                  <div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">check_circle</span><span class="">Ensayos de hermeticidad y pruebas de viento y lluvia para el clima austral.</span></div>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-inner bg-surface-container h-44">
-                  <div class="w-full h-full bg-cover bg-center" data-alt="Industrial glass factory workshop with master glassmakers" id="img_taller" style="background-image: url('images/img_taller.jpg')"></div>
-                </div>
-                <a class="w-full py-3 bg-secondary text-on-secondary hover:bg-primary text-center rounded-xl font-label-md text-label-md font-bold transition-all shadow-md" href="#cotizador-expres">
-                  Agendar Visita a Fábrica o Asesoría en Terreno
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECTS GALLERY & CASE STUDIES -->
-      <section class="w-full bg-surface py-space-3xl lg:py-space-4xl">
-        <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
-          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-2xl">
-            <div>
-              <span class="font-eyebrow text-eyebrow text-secondary uppercase font-bold tracking-widest">Obras Entregadas</span>
-              <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-primary font-bold mt-space-2xs">Proyectos Recientes</h2>
-            </div>
-            <div class="flex items-center gap-space-xs">
-              <button class="gallery-filter-btn active-filter px-space-md py-1.5 bg-primary-container text-on-primary rounded-lg font-label-sm text-label-sm transition-all" onclick="filterGallery('todos')">Todos</button>
-              <button class="gallery-filter-btn px-space-md py-1.5 bg-surface-container-high text-primary hover:bg-primary-container hover:text-on-primary rounded-lg font-label-sm text-label-sm transition-all" onclick="filterGallery('pvc')">PVC</button>
-              <button class="gallery-filter-btn px-space-md py-1.5 bg-surface-container-high text-primary hover:bg-primary-container hover:text-on-primary rounded-lg font-label-sm text-label-sm transition-all" onclick="filterGallery('aluminio')">Aluminio QT</button>
-              <button class="gallery-filter-btn px-space-md py-1.5 bg-surface-container-high text-primary hover:bg-primary-container hover:text-on-primary rounded-lg font-label-sm text-label-sm transition-all" onclick="filterGallery('termopanel')">Termopanel</button>
-            </div>
-          </div>
-          
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
-            <!-- Project 1 -->
-            <div class="project-item group relative rounded-2xl overflow-hidden shadow-md bg-surface-container-lowest" data-category="pvc">
-              <div class="h-80 overflow-hidden">
-                <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Modern house in Chicureo with PVC windows" id="img_proyecto_pucon" style="background-image: url('images/img_proyecto_pucon.jpg')"></div>
-              </div>
-              <div class="p-space-lg flex flex-col gap-space-xs">
-                <div class="flex items-center justify-between">
-                  <span class="font-eyebrow text-eyebrow text-secondary uppercase font-bold">Pucón, Lago Villarrica</span>
-                  <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">32 Ventanas</span>
-                </div>
-                <h3 class="font-title-md text-title-md text-primary font-bold">Residencia Los Coihues: PVC Europeo Antracita</h3>
-                <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Ventanales con doble vidriado térmico especial para climas lacustres con lámina solar Low-E.</p>
-              </div>
-            </div>
-            
-            <!-- Project 2 -->
-            <div class="project-item group relative rounded-2xl overflow-hidden shadow-md bg-surface-container-lowest" data-category="aluminio">
-              <div class="h-80 overflow-hidden">
-                <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Contemporary residential building in Lo Barnechea" id="img_proyecto_temuco" style="background-image: url('images/img_proyecto_temuco.jpg')"></div>
-              </div>
-              <div class="p-space-lg flex flex-col gap-space-xs">
-                <div class="flex items-center justify-between">
-                  <span class="font-eyebrow text-eyebrow text-secondary uppercase font-bold">Temuco, Av. Alemania</span>
-                  <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Edificio 6 Pisos</span>
-                </div>
-                <h3 class="font-title-md text-title-md text-primary font-bold">Edificio Portal Cautín: Línea QT Aluminio Titanio</h3>
-                <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Grandes ventanales herméticos resistentes al viento sur con rodamientos reforzados de acero.</p>
-              </div>
-            </div>
-            
-            <!-- Project 3 -->
-            <div class="project-item group relative rounded-2xl overflow-hidden shadow-md bg-surface-container-lowest" data-category="termopanel">
-              <div class="h-80 overflow-hidden">
-                <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Renovated luxury apartment in Las Condes" id="img_proyecto_puerto_octay" style="background-image: url('images/img_proyecto_puerto_octay.jpg')"></div>
-              </div>
-              <div class="p-space-lg flex flex-col gap-space-xs">
-                <div class="flex items-center justify-between">
-                  <span class="font-eyebrow text-eyebrow text-secondary uppercase font-bold">Puerto Octay / Puerto Montt</span>
-                  <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Remodelación</span>
-                </div>
-                <h3 class="font-title-md text-title-md text-primary font-bold">Cabaña Lago Llanquihue: Cierre Acústico y Térmico</h3>
-                <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Vidrios laminados y termopanel de alta eficiencia frente al frío y lluvias persistentes de la zona sur.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- TESTIMONIALS & TRUST -->
-      <section class="w-full bg-surface-container-low py-space-3xl">
-        <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
-          <div class="text-center max-w-xl mx-auto mb-space-2xl">
-            <span class="font-eyebrow text-eyebrow text-secondary uppercase font-bold tracking-widest">Opiniones Reales</span>
-            <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-primary font-bold mt-space-2xs">Respaldados por Quienes Construyen y Habitan</h2>
-          </div>
-          
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
-            <!-- Review 1 -->
-            <div class="bg-surface-container-lowest p-space-xl rounded-2xl shadow-sm flex flex-col justify-between">
-              <div class="flex flex-col gap-space-sm">
-                <p class="font-body-md text-body-md text-on-surface italic">
-                  "Cambiamos 14 ventanas a PVC Europeo con Vidriería Lagos frente al lago. La reducción del gasto en calefacción y el aislamiento del viento invernal fue inmediato. Cumplieron el plazo al día convenido."
-                </p>
-              </div>
-              <div class="flex items-center gap-space-sm pt-space-md">
-                <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary">RC</div>
-                <div class="flex flex-col">
-                  <span class="font-label-md text-label-md text-primary font-bold">Rodrigo Canales</span>
-                  <span class="font-body-sm text-body-sm text-on-surface-variant">Propietario en Pucón</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Review 2 -->
-            <div class="bg-surface-container-lowest p-space-xl rounded-2xl shadow-sm flex flex-col justify-between">
-              <div class="flex flex-col gap-space-sm">
-                <p class="font-body-md text-body-md text-on-surface italic">
-                  "Como arquitecta en la zona sur, valoro enormemente tener un taller propio en Temuco con estándares europeos. Su asesor técnico vino a la obra en Villarrica 3 veces antes de autorizar la fabricación final."
-                </p>
-              </div>
-              <div class="flex items-center gap-space-sm pt-space-md">
-                <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary">CA</div>
-                <div class="flex flex-col">
-                  <span class="font-label-md text-label-md text-primary font-bold">Arq. Camila Arancibia</span>
-                  <span class="font-body-sm text-body-sm text-on-surface-variant">Directora en Estudio Sur Arquitectura, Temuco</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Review 3 -->
-            <div class="bg-surface-container-lowest p-space-xl rounded-2xl shadow-sm flex flex-col justify-between">
-              <div class="flex flex-col gap-space-sm">
-                <p class="font-body-md text-body-md text-on-surface italic">
-                  "Más de 20 años confiando nuestras obras en Temuco y la zona lacustre a Vidriería Lagos. Nunca fallan con el butilo ni la estanqueidad ante temporales. Es una empresa seria, de las que ya no quedan en el rubro vidriero."
-                </p>
-              </div>
-              <div class="flex items-center gap-space-sm pt-space-md">
-                <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary">MH</div>
-                <div class="flex flex-col">
-                  <span class="font-label-md text-label-md text-primary font-bold">Manuel Herrera</span>
-                  <span class="font-body-sm text-body-sm text-on-surface-variant">Gerente Constructora Lago Sur, Villarrica</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- HIGH-IMPACT FINAL CALL TO ACTION & DIRECT CONTACT BANNER -->
-      <section class="w-full bg-primary-container text-on-primary py-space-3xl lg:py-space-4xl">
-        <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
-          <div class="bg-primary rounded-3xl p-space-xl lg:p-space-3xl shadow-2xl relative overflow-hidden">
-            <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center relative z-10">
-              <div class="lg:col-span-7 flex flex-col gap-space-md">
-                <span class="font-eyebrow text-eyebrow text-secondary-container tracking-widest uppercase font-bold">Atención Inmediata en Temuco y todo el Sur de Chile</span>
-                <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-on-primary font-bold tracking-tight">
-                  ¿Tiene un plano o necesita renovar sus ventanas hoy mismo?
-                </h2>
-                <p class="font-body-lg text-body-lg text-on-primary-container leading-relaxed">
-                  Nuestros ingenieros y maestros lo asesoran directamente en obra o en nuestra planta de ensamble en Temuco. Cobertura completa en Temuco, Pucón, Villarrica, Caburgua, Puerto Octay y Puerto Montt. Obtenga presupuesto sin compromiso con garantía de 65 años de experiencia.
-                </p>
-                <div class="flex flex-wrap items-center gap-space-lg pt-space-xs text-on-primary font-body-sm text-body-sm">
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary-container text-[20px]">call</span><span class="">Central Temuco: (+56 45) 2345 670</span></div>
-                  <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary-container text-[20px]">location_on</span><span class="">Av. Rudecindo Ortega / Parque Industrial, Temuco</span></div>
-                </div>
-              </div>
-              
-              <div class="lg:col-span-5 flex flex-col gap-space-md bg-surface-container-lowest text-primary p-space-xl rounded-2xl shadow-xl">
-                <span class="font-title-md text-title-md font-bold text-primary">Le devolvemos el llamado en 15 minutos:</span>
-                <form class="flex flex-col gap-space-sm" onsubmit="handleQuickCallback(event)">
-                  <input class="w-full h-11 px-space-md bg-surface-container-low rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-primary font-body-md text-body-md" name="nombre" placeholder="Su Nombre" required="" type="text" />
-                  <input class="w-full h-11 px-space-md bg-surface-container-low rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-primary font-body-md text-body-md" name="telefono" placeholder="Su Teléfono / WhatsApp" required="" type="tel" />
-                  <button class="w-full py-3.5 bg-secondary hover:bg-secondary-container hover:text-on-secondary-fixed text-on-secondary font-label-md text-label-md rounded-xl font-bold transition-all shadow-md flex items-center justify-center gap-space-xs" type="submit">
-                    <span class="material-symbols-outlined text-[18px]">phone_callback</span>
-                    <span class="">Solicitar Llamada Inmediata</span>
-                  </button>
-                </form>
-                <div class="flex items-center justify-center gap-space-2xs pt-space-2xs">
-                  <span class="font-body-sm text-body-sm text-on-surface-variant">O contáctenos por</span>
-                  <a class="font-label-sm text-label-sm text-secondary font-bold hover:underline flex items-center gap-1" href="https://wa.me/56989807490" target="_blank">
-                    WhatsApp Directo <span class="material-symbols-outlined text-[14px]">open_in_new</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="w-full bg-primary text-on-primary pt-space-3xl pb-space-2xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
-    <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl pb-space-2xl">
-        <div class="lg:col-span-4 flex flex-col gap-space-md">
-          <div class="flex items-center gap-space-sm">
-            <div class="w-9 h-9 rounded-xl bg-surface-container-lowest flex items-center justify-center p-1">
-              <img alt="Vidriería Lagos Logo" class="h-6 w-auto object-contain" src="images/img_logo.png" />
-            </div>
-            <div class="flex flex-col">
-              <span class="font-headline-sm text-headline-sm text-on-primary font-bold tracking-tight uppercase">Vidriería Lagos</span>
-              <span class="font-eyebrow text-eyebrow text-secondary-container uppercase tracking-widest">Temuco • Desde 1959</span>
-            </div>
-          </div>
-          <p class="font-body-md text-body-md text-on-primary-container max-w-sm">
-            Líderes en ingeniería, corte y montaje de cristal arquitectónico, termopaneles certificados DVH y carpintería de alto rendimiento en aluminio y PVC para proyectos en Temuco, Villarrica, Pucón, Puerto Octay, Puerto Montt y todo el Sur de Chile.
-          </p>
-          <div class="flex items-center gap-space-xs pt-space-xs">
-            <div class="bg-primary-container px-space-sm py-2 rounded-xl flex items-center gap-space-xs">
-              <span class="material-symbols-outlined text-secondary-container text-[20px]">verified_user</span>
-              <div class="flex flex-col"><span class="font-label-sm text-label-sm font-bold text-on-primary">Garantía Estructural</span><span class="font-eyebrow text-eyebrow text-on-primary-container">Norma NCh 132</span></div>
-            </div>
-            <div class="bg-primary-container px-space-sm py-2 rounded-xl flex items-center gap-space-xs">
-              <span class="material-symbols-outlined text-secondary-container text-[20px]">factory</span>
-              <div class="flex flex-col"><span class="font-label-sm text-label-sm font-bold text-on-primary">Taller Propio</span><span class="font-eyebrow text-eyebrow text-on-primary-container">Temuco, La Araucanía</span></div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="lg:col-span-3 flex flex-col gap-space-sm">
-          <span class="font-title-md text-title-md text-on-primary uppercase font-bold tracking-wider">Líneas y Soluciones</span>
-          <div class="flex flex-col gap-space-xs">
-            <a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-colors" data-path="termopaneles-&-vidrios" href="#">Termopaneles Herméticos (DVH)</a>
-            <a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-colors" data-path="ventanas-pvc" href="#">Ventanas y Puertas PVC Europeo</a>
-            <a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-colors" data-path="ventanas-pvc" href="#">Línea PVC Correderas Americano</a>
-            <a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-colors" data-path="lineas-de-aluminio" href="#">Carpintería de Aluminio Línea QT</a>
-            <a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-colors" data-path="proyectos" href="#">Fachadas Continuas y Muro Cortina</a>
-            <a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-colors" data-path="termopaneles-&-vidrios" href="#">Cristales Templados y Laminados</a>
-          </div>
-        </div>
-        
-        <div class="lg:col-span-2 flex flex-col gap-space-sm">
-          <span class="font-title-md text-title-md text-on-primary uppercase font-bold tracking-wider">Navegación</span>
-          <div class="flex flex-col gap-space-xs">
-            <a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-colors" data-path="inicio" href="#">Inicio</a>
-            <a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-colors" data-path="proyectos" href="#">Portafolio de Obras</a>
-            <a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-colors" data-path="nosotros" href="#">Nuestra Trayectoria</a>
-            <a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-colors" data-path="cotizar-proyecto" href="#">Solicitud de Presupuesto</a>
-            <a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-colors" data-path="politicas-y-garantias" href="#">Certificaciones y Ensayos</a>
-          </div>
-        </div>
-        
-        <div class="lg:col-span-3 flex flex-col gap-space-sm">
-          <span class="font-title-md text-title-md text-on-primary uppercase font-bold tracking-wider">Mesa Central & Fábrica</span>
-          <div class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-primary-container">
-            <div class="flex items-start gap-space-2xs"><span class="material-symbols-outlined text-secondary-container text-[18px] mt-0.5 shrink-0">location_on</span><span class="">Casa Matriz & Planta: Av. Rudecindo Ortega / Parque Industrial, Temuco, Región de La Araucanía</span></div>
-            <div class="flex items-start gap-space-2xs"><span class="material-symbols-outlined text-secondary-container text-[18px] mt-0.5 shrink-0">map</span><span class="">Cobertura: Temuco, Pucón, Villarrica, Caburgua, Puerto Octay y Puerto Montt</span></div>
-            <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary-container text-[18px] shrink-0">call</span><span class="">Central Telefónica: (+56 45) 2345 670</span></div>
-            <div class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary-container text-[18px] shrink-0">mail</span><span class="">contacto@vidrierialagos.cl</span></div>
-          </div>
-          <div class="pt-space-xs">
-            <!-- Enlace de WhatsApp actualizado -->
-            <a class="inline-flex items-center justify-center gap-space-xs w-full bg-secondary text-on-secondary hover:bg-secondary-container hover:text-on-secondary-fixed font-label-md text-label-md py-2.5 px-space-md rounded-xl transition-all shadow-[0_4px_16px_rgba(0,99,152,0.25)]" href="https://wa.me/56989807490" target="_blank">
-              <span class="material-symbols-outlined text-[20px]">chat</span>
-              <span class="">WhatsApp Directo Asesoría</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="pt-space-xl flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-primary-container font-body-sm text-body-sm">
-        <p class="">© 2025 Vidriería Lagos S.A. Más de seis décadas de maestría en cristal plano y arquitectura en el Sur de Chile.</p>
-        <div class="flex items-center gap-space-md">
-          <a class="hover:text-on-primary transition-colors" data-path="politicas-y-garantias" href="#">Términos y Condiciones</a>
-          <a class="hover:text-on-primary transition-colors" data-path="politicas-y-garantias" href="#">Garantías Térmicas</a>
-        </div>
-      </div>
+  <footer class="w-full bg-primary text-on-primary pt-space-3xl pb-space-2xl">
+    <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop flex justify-center text-center">
+       <p class="font-body-sm text-on-primary-container">© 2026 Vidriería Lagos S.A. Todos los derechos reservados.</p>
     </div>
   </footer>
   
-  <!-- Enlace limpio y único al archivo JavaScript -->
   <script src="js/main.js"></script>
 </body>
 </html>
